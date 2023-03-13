@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { create } from 'domain';
 import React, { useRef, useState, ReactNode } from 'react';
-import Link from 'next/link';
 
 
 import Header from './header';
@@ -22,6 +21,8 @@ export default function form() {
     const [mailError, setMailError] = useState("");
     const [phonError, setPhonError] = useState("");
     const [messageError, setMessageError] = useState("");
+    const [error, setError] = useState(false);
+  
 
     //入力内容を受け取る処理
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,18 +39,64 @@ export default function form() {
     }
 
     //入力内容を消す処理
-    const cleaButton = () => {
+    const cleaValues = () => {
         setNameValue("");
         setMailValue("");
         setPhonValue("");
         setMessageValue("");
     };
 
-    //ここでバリデーションチェックを行う。
+    //ここでバリデーションチェックとメール送信処理の実行を行う。
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      
 
+      const mailcheck = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+      const phoncheck = /^0\d{9,10}$/;
+
+      setNameError("");
+      setMailError("");
+      setPhonError("");
+      setMessageError("");
+
+      if(!nameValue){
+        setNameError("名前を入力して下さい");
+        setError(false);
+        console.log(error)
+      }
+      if(!mailValue){
+        setMailError("メールアドレスを入力して下さい");
+        setError(false);
+      }else if(!mailcheck.test(mailValue)){
+        setMailError("正しくメールアドレスを入力して下さい");
+        setError(false);
+      }
+      if(!phonValue){
+        setPhonError("電話番号を入力して下さい")
+      }else if(!phoncheck.test(phonValue)){
+        setPhonError("電話番号を正しく入力して下さい")
+      }
+      if(!messageValue){
+        setMessageError("問い合わせ内容を入力して下さい")
+      }
+
+      if(nameValue && mailcheck.test(mailValue) && phoncheck.test(phonValue) && messageValue){
+        const resurt = confirm(`
+        下記の内容で送信しても宜しいでしょうか？\n
+        【お名前】\n
+        ${nameValue}\n
+        【メールアドレス】\n
+        ${mailValue}\n
+        【電話番号】\n
+        ${phonValue}\n
+        【問い合わせ内容】\n
+        ${messageValue}`)
+        
+        if(resurt){
+          mailSend();
+          alert("送信完了しました")
+          cleaValues();
+        }
+      }      
     }
 
     //メール送信の実行をAPIへ送信する処理
@@ -90,6 +137,7 @@ export default function form() {
                 id='name' ref={nameRef} 
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleNameChange(e)}
                 />
+                <span>{nameError}</span>
                 </div>
                 <div className="mb-3">
                 <label htmlFor="mail" className='form-label'>メールアドレス</label>
@@ -101,6 +149,7 @@ export default function form() {
                 ref={mailRef} 
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleMailChange(e)} 
                 />
+                <span>{mailError}</span>
                 </div>
                 <div className="mb-3">
                 <label htmlFor="phon" className='form-label'>電話番号 </label>
@@ -112,6 +161,7 @@ export default function form() {
                 ref={phonRef} 
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handlePhonChange(e)} 
                 />
+                <span>{phonError}</span>
                 </div>
                 <div className="mb-3">
                 <label htmlFor="message" className='form-label'>問い合わせ内容 </label>
@@ -123,9 +173,10 @@ export default function form() {
                 ref={messageRef} 
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleMessageChange(e)}>
                 </textarea>
+                <span>{messageError}</span>
                 </div>
                 <button type='submit' className='btn btn-danger'>送信する</button>
-                <button type='button' className='btn btn-danger ms-1' onClick={cleaButton}>クリア</button>
+                <button type='button' className='btn btn-danger ms-1' onClick={cleaValues}>クリア</button>
             </div>
           </form>
         </div>
