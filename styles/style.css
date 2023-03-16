@@ -1,0 +1,70 @@
+ul {
+  margin-bottom: 0;
+}
+
+header {
+  z-index: 5;
+}
+
+.menuButton {
+  height: 35px;
+  width: 35px;
+  position: relative;
+  transform: translateY(0);
+  transition: all 1s ease;
+}
+.menuButton > span {
+  display: inline-block;
+  position: absolute;
+  height: 3px;
+  width: 35px;
+  border-radius: 20px;
+  background-color: white;
+  transition: all 1s ease;
+}
+.menuButton > span::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: -10px;
+  height: 3px;
+  width: 35px;
+  border-radius: 20px;
+  background-color: white;
+  transition: all 1s ease;
+}
+.menuButton > span::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  height: 3px;
+  width: 35px;
+  border-radius: 20px;
+  background-color: white;
+  transition: all 1s ease;
+}
+.menuButton.toggleButton > span {
+  width: 0;
+}
+.menuButton.toggleButton > span::after {
+  transform: translateY(10px) rotate(225deg);
+}
+.menuButton.toggleButton > span::before {
+  transform: translateY(-10px) rotate(-225deg);
+}
+
+.headerMenu {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  transform: translateY(-100vh);
+  height: calc(100vh - 46px);
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.837);
+  transition: all 0.7s 0.1s ease;
+  z-index: 2;
+}
+.headerMenu.toggleButton {
+  transform: translateY(46px);
+}/*# sourceMappingURL=style.css.map */
