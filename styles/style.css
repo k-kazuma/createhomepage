@@ -1,5 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap");
+* {
+  font-family: "Lora", serif;
+}
+
+#canvasContainer {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+h1,
+p,
+h6 {
+  margin: 0;
+}
+
 ul {
   margin-bottom: 0;
+}
+ul > a > li {
+  transition: all 0.5s ease;
+}
+ul > a > li:hover {
+  opacity: 0.6;
+  scale: 1.1;
+}
+
+p {
+  word-wrap: break-word;
 }
 
 header {
@@ -67,4 +95,29 @@ header {
 }
 .headerMenu.toggleButton {
   transform: translateY(46px);
+}
+
+.title {
+  z-index: 2;
+}
+
+.heroImg {
+  height: 100vh;
+  background: rgb(55, 55, 63);
+  background: linear-gradient(285deg, rgb(55, 55, 63) 0%, rgb(195, 193, 193) 100%);
+  background-attachment: fixed;
+}
+
+.section {
+  width: 85vw;
+  margin: 0 auto;
+}
+
+.serviceImg {
+  width: 360px;
+  height: 240px;
+  background-image: url(../public/dummy.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }/*# sourceMappingURL=style.css.map */

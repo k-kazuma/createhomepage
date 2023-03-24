@@ -4,6 +4,7 @@ import { ToggleButton } from 'react-bootstrap'
 
 function header() {
 
+
   const [toggleButton, setToggleButton] = useState(false);
 
   return (
@@ -22,7 +23,7 @@ function header() {
                 <Link href={"/profile"} className="text-decoration-none">
                   <li className='me-3 text-light'>プロフィール</li>
                 </Link>
-                <Link href={"/form"} className="text-decoration-none">
+                <Link href={"/contact"} className="text-decoration-none">
                   <li className='text-light'>問い合わせ</li>
                 </Link>
               </ul>
@@ -50,7 +51,7 @@ function header() {
                 <Link href={"/profile"} className="text-decoration-none">
                   <li className='text-light py-2 fs-3'>プロフィール</li>
                 </Link>
-                <Link href={"/form"} className="text-decoration-none">
+                <Link href={"/contact"} className="text-decoration-none">
                   <li className='text-light py-2 fs-3 '>問い合わせ</li>
                 </Link>
               </ul>

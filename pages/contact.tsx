@@ -3,10 +3,10 @@ import { create } from 'domain';
 import React, { useRef, useState, ReactNode } from 'react';
 
 
-import Header from './header';
+import Header from './components/header';
 
 
-export default function form() {
+export default function contact() {
     const nameRef = useRef<HTMLInputElement>(null);
     const mailRef = useRef<HTMLInputElement>(null);
     const phonRef = useRef<HTMLInputElement>(null);
