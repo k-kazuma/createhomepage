@@ -146,3 +146,67 @@ header {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+
+// アニメーション
+
+.service {
+
+
+    & > h3 {
+        opacity: 0;
+        transition: all 1s ease 0.5s;
+
+        &.inView {
+            opacity: 1;
+        }
+    }
+
+    & > div {
+
+        & > h6 {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 1s ease 1s;
+        }
+
+        & > div {
+
+            & > div {
+                opacity: 0;
+                transform: translateY(10px);
+                transition: all 1s ease 1.5s;
+            }
+
+            & > p {
+                opacity: 0;
+                transform: translateY(10px);
+                transition: all 1s ease 2s;
+            }
+        }
+
+        &.inView {
+
+            & > h6 {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            & > div {
+
+                & > div {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                & > P {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+
+
+ 
+}

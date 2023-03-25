@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+
+import SectionTitle from './sectionTitle'
+import ServiceList from './seviceList'
 import Box from '../components/box'
 
 function main() {
+
+  const { ref, inView } = useInView({
+
+    rootMargin: '-100px',
+    triggerOnce: true,
+  })  
+
+
   return (
     <>
         <main>
@@ -20,25 +32,21 @@ function main() {
        
           <section className='section'>
             <div className="row">
-              <div className="container">
-                <h3 className='text-center py-5'>サービス</h3>
-                <div className='text-center'>
-                  <h6>ウェブサイト制作</h6>
-                  <div className="d-md-flex pt-3 justify-content-center">
-                    <div className="serviceImg mx-auto mx-md-0"></div>
-                    <p className='col-md-4 pt-3 ms-md-5'>
-                      ホームページ、ランディングページ、コーポレートサイトなどの制作を承っております。
-                      UIの設計にこだわって操作性の高いWEBサイトの制作を心がけております。
-                    </p>
-                  </div>
-                </div>
-                <div className='text-center mt-5'>
-                  <h6>ウェブアプリ開発</h6>
-                  <div className="d-md-flex pt-3 justify-content-center">
-                    <div className="serviceImg mx-auto mx-md-0"></div>
-                    <p className='col-md-4 pt-3 ms-md-5'>dummytextdummytextdummytextdummytextdummytextdummytext</p>
-                  </div>
-                </div>
+              <div className={`container service`} >
+                <SectionTitle  text="サービス"/>
+                <ServiceList 
+                title="ウェブサイト制作"
+                text="
+                ホームページ、ランディングページ、コーポレートサイトなどの制作を承っております。
+                UIの設計にこだわって操作性の高いWEBサイトの制作を心がけております。
+                "
+                />
+                <ServiceList 
+                title="ウェブアプリ開発"
+                text="
+                dummytextdummytextdummytextdummytextdummytextdummytext
+                "
+                />
               </div>
             </div>
           </section>
