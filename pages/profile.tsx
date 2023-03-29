@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import Header from './components/header'
 
-function profile() {
+function Profile() {
   return (
     <>
         <Header />
@@ -12,4 +12,4 @@ function profile() {
   )
 }
 
-export default profile
+export default Profile

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function footer() {
+function Footer() {
   return (
     <>
         <footer className='bg-secondary mt-5 pt-2 pb1 position-relative'>
@@ -12,4 +12,4 @@ function footer() {
   )
 }
 
-export default footer
+export default Footer

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import Header from './components/header'
 
-function service() {
+function Service() {
   return (
     <>
         <Header />
@@ -12,4 +12,4 @@ function service() {
   )
 }
 
-export default service
+export default Service

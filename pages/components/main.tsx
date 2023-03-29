@@ -6,7 +6,7 @@ import SectionTitle from './sectionTitle'
 import ServiceList from './seviceList'
 import Box from '../components/box'
 
-function main() {
+function Main() {
 
   const { ref, inView } = useInView({
 
@@ -77,4 +77,4 @@ function main() {
   )
 }
 
-export default main
+export default Main

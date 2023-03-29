@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { ToggleButton } from 'react-bootstrap'
 
-function header() {
+function Header() {
 
 
   const [toggleButton, setToggleButton] = useState(false);
@@ -61,4 +61,4 @@ function header() {
   )
 }
 
-export default header
+export default Header

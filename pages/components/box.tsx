@@ -5,7 +5,7 @@ import { OrbitControls } from '@react-three/drei';
 import {Cube} from './cube'
 import {Cube2} from './cube2'
 
-function box() {
+function Box() {
   return (
     <div id='canvasContainer'>
         <Canvas
@@ -32,4 +32,4 @@ function box() {
   )
 }
 
-export default box
+export default Box

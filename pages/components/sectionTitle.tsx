@@ -5,7 +5,7 @@ type Props = {
   text: string;
 }
 
-function sectionTitle(props: Props) {
+function SectionTitle(props: Props) {
 
     const { ref, inView } = useInView({
 
@@ -21,4 +21,4 @@ function sectionTitle(props: Props) {
   )
 }
 
-export default sectionTitle
+export default SectionTitle

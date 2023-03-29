@@ -7,7 +7,7 @@ type Props = {
     img: string;
   }
 
-function seviceList(props:Props) {
+function SeviceList(props:Props) {
 
     const { ref, inView } = useInView({
 
@@ -28,4 +28,4 @@ function seviceList(props:Props) {
   )
 }
 
-export default seviceList
+export default SeviceList
