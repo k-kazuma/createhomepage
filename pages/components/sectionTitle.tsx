@@ -14,7 +14,10 @@ function sectionTitle(props: Props) {
     })
 
   return (
-    <h3 className={`text-center py-5 ${inView && 'inView'}`} ref={ref}>{props.text}</h3>
+    <>
+      <h3 className={`sectionTitle text-center py-5 m-0 ${inView && 'inView'}`} ref={ref}>{props.text}</h3>
+      <hr className='mb-2' />
+    </>
   )
 }
 

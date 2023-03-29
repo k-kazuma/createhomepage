@@ -30,6 +30,11 @@ p {
   word-wrap: break-word;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 header {
   z-index: 5;
 }
@@ -102,10 +107,14 @@ header {
 }
 
 .heroImg {
+  width: 100%;
   height: 100vh;
   background: rgb(55, 55, 63);
   background: linear-gradient(285deg, rgb(55, 55, 63) 0%, rgb(195, 193, 193) 100%);
-  background-attachment: fixed;
+}
+
+.serviceImage {
+  width: 450px;
 }
 
 .section {
@@ -113,42 +122,36 @@ header {
   margin: 0 auto;
 }
 
-.serviceImg {
-  width: 360px;
-  height: 240px;
-  background-image: url(../public/dummy.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.service > h3 {
+.sectionTitle {
   opacity: 0;
+  transform: translateY(10px);
   transition: all 1s ease 0.5s;
 }
-.service > h3.inView {
+.sectionTitle.inView {
   opacity: 1;
+  transform: translateY(0);
 }
-.service > div > h6 {
+
+.service > div > h4 {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease 0.5s;
+}
+.service > div > div > img {
   opacity: 0;
   transform: translateY(10px);
   transition: all 1s ease 1s;
 }
-.service > div > div > div {
+.service > div > div > p {
   opacity: 0;
   transform: translateY(10px);
   transition: all 1s ease 1.5s;
 }
-.service > div > div > p {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 1s ease 2s;
-}
-.service > div.inView > h6 {
+.service > div.inView > h4 {
   opacity: 1;
   transform: translateY(0);
 }
-.service > div.inView > div > div {
+.service > div.inView > div > img {
   opacity: 1;
   transform: translateY(0);
 }
