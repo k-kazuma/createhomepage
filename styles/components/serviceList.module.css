@@ -1,0 +1,31 @@
+.service > h4 {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease 0.5s;
+}
+.service > div > img {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease 1s;
+}
+.service > div > p {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease 1.5s;
+}
+.service.inView > h4 {
+  opacity: 1;
+  transform: translateY(0);
+}
+.service.inView > div > img {
+  opacity: 1;
+  transform: translateY(0);
+}
+.service.inView > div > P {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.serviceImage {
+  width: 450px;
+}/*# sourceMappingURL=serviceList.module.css.map */

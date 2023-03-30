@@ -1,0 +1,50 @@
+
+
+    .service {
+
+        & > h4 {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 1s ease 0.5s;
+        }
+
+        & > div {
+
+            & > img {
+                opacity: 0;
+                transform: translateY(10px);
+                transition: all 1s ease 1s;
+            }
+
+            & > p {
+                opacity: 0;
+                transform: translateY(10px);
+                transition: all 1s ease 1.5s;
+            }
+        }
+
+        &.inView {
+
+            & > h4 {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            & > div {
+
+                & > img {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                & > P {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+
+    .serviceImage {
+        width: 450px;
+    }

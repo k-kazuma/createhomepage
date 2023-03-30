@@ -1,4 +1,5 @@
 import React from 'react'
+import style from 'styles/components/sectionTitle.module.scss'
 import { useInView } from 'react-intersection-observer'
 
 type Props = {
@@ -15,7 +16,7 @@ function SectionTitle(props: Props) {
 
   return (
     <>
-      <h3 className={`sectionTitle text-center py-5 m-0 ${inView && 'inView'}`} ref={ref}>{props.text}</h3>
+      <h3 className={`${style.sectionTitle} ${inView && style.inView} text-center py-5 m-0`} ref={ref}>{props.text}</h3>
       <hr className='mb-2' />
     </>
   )

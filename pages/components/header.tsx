@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { ToggleButton } from 'react-bootstrap'
+import style from 'styles/components/header.module.scss'
 
 function Header() {
 
@@ -30,7 +30,7 @@ function Header() {
             </nav>
             <div className='d-sm-none'>
               <button 
-              className={`menuButton ${toggleButton && "toggleButton"}`}
+              className={`${style.menuButton} ${toggleButton && style.toggleButton}`}
               onClick={() => {setToggleButton(!toggleButton);}}
               >
                 <span></span>
@@ -39,7 +39,7 @@ function Header() {
           </div>
         </div>
       </header>
-      <div className={`headerMenu ${toggleButton && "toggleButton"}`}>
+      <div className={`${style.headerMenu} ${toggleButton && style.toggleButton}`}>
           <nav className='text-center'>
               <ul className='mt-5'>
                 <Link href={"/"} className="text-decoration-none">
