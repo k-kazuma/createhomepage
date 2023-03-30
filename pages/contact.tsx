@@ -6,7 +6,7 @@ import React, { useRef, useState, ReactNode } from 'react';
 import Header from './components/header';
 
 
-export default function contact() {
+export default function Contact() {
     const nameRef = useRef<HTMLInputElement>(null);
     const mailRef = useRef<HTMLInputElement>(null);
     const phonRef = useRef<HTMLInputElement>(null);
