@@ -4,25 +4,26 @@ import type { Mesh } from 'three'
 
 function Cube2({position}: {position: number[]}) {
 
-    const cubeRef2 = useRef<Mesh>(null)
+    // const cubeRef2 = useRef<Mesh>(null)
 
-        useFrame(() => {
-            const cube = cubeRef2.current;
-            if(!cube) return;
-            cube.rotation.y += 0.003;
+    //     useFrame(() => {
+    //         const cube = cubeRef2.current;
+    //         if(!cube) return;
+    //         cube.rotation.y += 0.003;
 
-        });
+    //     });
 
     
 
     return(
-        <mesh ref={cubeRef2} position={[position[0], position[1], position[2]]}>
-            <boxBufferGeometry args={[1.9, 1.9, 1.9]}/>
-            <meshStandardMaterial 
-            color="white" 
-            />
+        // <mesh ref={cubeRef2} position={[position[0], position[1], position[2]]}>
+        //     <boxBufferGeometry args={[1.9, 1.9, 1.9]}/>
+        //     <meshStandardMaterial 
+        //     color="white" 
+        //     />
             
-        </mesh>
+        // </mesh>
+        <div></div>
     )
 }
 
