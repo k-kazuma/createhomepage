@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import type { Mesh } from 'three'
 import { useFrame } from '@react-three/fiber'
 
-export const Cube = ({position}: {position: number[]}) => {
+function Cube({position}: {position: number[]}) {
 
     const cubeRef = useRef<Mesh>(null)
     let [translate, setTranslate] = useState(position[1])
@@ -25,3 +25,5 @@ export const Cube = ({position}: {position: number[]}) => {
         </mesh>
     )
 }
+
+export default Cube

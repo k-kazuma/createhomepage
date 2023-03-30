@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei';
-import {Cube} from './cube'
-import {Cube2} from './cube2'
+import Cube from './cube'
+import Cube2 from './cube2'
 
 function Box() {
   return (
