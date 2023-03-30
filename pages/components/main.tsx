@@ -4,7 +4,7 @@ import style from 'styles/components/main.module.scss'
 
 import SectionTitle from './sectionTitle'
 import ServiceList from './seviceList'
-// import Box from '../components/box'
+import Box from '../components/box'
 
 function Main() {
 
@@ -18,7 +18,7 @@ function Main() {
                   <h1>Web制作Monkey</h1>
                   <p>ウェブサイト制作／ウェブアプリ開発</p>
                 </div>
-                {/* <Box /> */}
+                <Box />
               </div>
             </div>
           </div>
