@@ -1,3 +1,13 @@
+.link {
+    display: inline-block;
+    transition: all 0.5s ease;
+    
+    &:hover{
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
 .menuButton {
     height: 35px;
     width: 35px;
