@@ -1,6 +1,10 @@
 
 
     .service {
+        text-align: center;
+        margin: 3rem 0;
+        padding: 0.5rem 0;
+
 
         & > h4 {
             opacity: 0;
@@ -47,4 +51,18 @@
 
     .serviceImage {
         width: 450px;
+    }
+
+    @media screen and (min-width:768px){
+
+        .service {
+             
+            & > div {
+
+                & > p {
+                    line-height: 2.6rem;
+                }
+            }
+        }
+
     }

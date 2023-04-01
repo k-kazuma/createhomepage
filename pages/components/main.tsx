@@ -39,7 +39,8 @@ function Main() {
                 <ServiceList 
                 title="ウェブアプリ開発"
                 text="
-                dummytextdummytextdummytextdummytextdummytextdummytext
+                Webブラウザを使用したアプリケーションの開発のご依頼を承っております。
+                また私自身のサービスとしてウェブアプリの開発もしておりますのでご活用ください。
                 "
                 img="application.jpg"
                 />
