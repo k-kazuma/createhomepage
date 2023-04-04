@@ -37,8 +37,6 @@ function Cube2({position=[0, 0, 0]}: {position?:number[]}) {
 
       });
 
-  
-
   return(
       <mesh ref={cubeRef2} position={[position[0], position[1], position[2]]}>
           <boxBufferGeometry args={[1.9, 1.9, 1.9]}/>
