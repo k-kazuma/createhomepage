@@ -1,0 +1,7 @@
+.hero {
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  background: rgb(55, 55, 63);
+  background: linear-gradient(285deg, rgb(55, 55, 63) 0%, rgb(195, 193, 193) 100%);
+}/*# sourceMappingURL=subHeader.module.css.map */

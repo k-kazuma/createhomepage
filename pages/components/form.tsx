@@ -4,9 +4,10 @@ import React, { useRef, useState, ReactNode } from 'react';
 
 
 import Header from './header';
+import SubHeader from './subHeader';
 
 
-export default function Contact() {
+export default function Form() {
     const nameRef = useRef<HTMLInputElement>(null);
     const mailRef = useRef<HTMLInputElement>(null);
     const phonRef = useRef<HTMLInputElement>(null);
@@ -22,8 +23,8 @@ export default function Contact() {
     const [phonError, setPhonError] = useState("");
     const [messageError, setMessageError] = useState("");
     const [error, setError] = useState(false);
-  
 
+    
     //入力内容を受け取る処理
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setNameValue(e.target.value);
@@ -124,56 +125,59 @@ export default function Contact() {
     return (
       <>
         <Header />
+        <SubHeader
+        text='問い合わせ'
+        />
         <div className="container mt-5 position-relative">
           <h2 className={`mt-3`}>問い合わせフォーム</h2>
           <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}>
             <div>
                 <div className="mb-3 ">
-                <label htmlFor="name" className='form-label'>お名前</label>
-                <input 
-                value={nameValue} 
-                type="text" 
-                className='form-control' 
-                id='name' ref={nameRef} 
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleNameChange(e)}
-                />
-                <span>{nameError}</span>
+                  <label htmlFor="name" className='form-label'>お名前</label>
+                  <input 
+                  value={nameValue} 
+                  type="text" 
+                  className='form-control' 
+                  id='name' ref={nameRef} 
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleNameChange(e)}
+                  />
+                  <span>{nameError}</span>
                 </div>
                 <div className="mb-3">
-                <label htmlFor="mail" className='form-label'>メールアドレス</label>
-                <input 
-                value={mailValue} 
-                type="text" 
-                className='form-control' 
-                id='mail' 
-                ref={mailRef} 
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleMailChange(e)} 
-                />
-                <span>{mailError}</span>
+                  <label htmlFor="mail" className='form-label'>メールアドレス</label>
+                  <input 
+                  value={mailValue} 
+                  type="text" 
+                  className='form-control' 
+                  id='mail' 
+                  ref={mailRef} 
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleMailChange(e)} 
+                  />
+                  <span>{mailError}</span>
                 </div>
                 <div className="mb-3">
-                <label htmlFor="phon" className='form-label'>電話番号 </label>
-                <input 
-                value={phonValue} 
-                type="text" 
-                className='form-control' 
-                id='phon' 
-                ref={phonRef} 
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handlePhonChange(e)} 
-                />
-                <span>{phonError}</span>
+                  <label htmlFor="phon" className='form-label'>電話番号 </label>
+                  <input 
+                  value={phonValue} 
+                  type="text" 
+                  className='form-control' 
+                  id='phon' 
+                  ref={phonRef} 
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handlePhonChange(e)} 
+                  />
+                  <span>{phonError}</span>
                 </div>
                 <div className="mb-3">
-                <label htmlFor="message" className='form-label'>問い合わせ内容 </label>
-                <textarea 
-                value={messageValue} 
-                name="message" 
-                id="message" 
-                className='form-control' 
-                ref={messageRef} 
-                onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleMessageChange(e)}>
-                </textarea>
-                <span>{messageError}</span>
+                  <label htmlFor="message" className='form-label'>問い合わせ内容 </label>
+                  <textarea 
+                  value={messageValue} 
+                  name="message" 
+                  id="message" 
+                  className='form-control' 
+                  ref={messageRef} 
+                  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleMessageChange(e)}>
+                  </textarea>
+                  <span>{messageError}</span>
                 </div>
                 <button type='submit' className='btn btn-danger'>送信する</button>
                 <button type='button' className='btn btn-danger ms-1' onClick={cleaValues}>クリア</button>
