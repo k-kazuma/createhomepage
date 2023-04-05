@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { create } from 'domain';
 import React, { useRef, useState, ReactNode } from 'react';
 
 
@@ -17,7 +16,7 @@ export default function Form() {
     const [mailValue, setMailValue] = useState("");
     const [phonValue, setPhonValue] = useState("");
     const [messageValue, setMessageValue] = useState("");
-    
+
     const [nameError, setNameError] = useState("");
     const [mailError, setMailError] = useState("");
     const [phonError, setPhonError] = useState("");
