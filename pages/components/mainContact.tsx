@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 
-function mainContact() {
+function MainContact() {
   return (
     <div className={`mt-5`}>
         <p>制作のご依頼ご相談はメールもしくは問い合わせフォームからお問い合わせください</p>
@@ -18,4 +18,4 @@ function mainContact() {
   )
 }
 
-export default mainContact
+export default MainContact
