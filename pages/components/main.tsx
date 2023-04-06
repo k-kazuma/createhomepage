@@ -23,7 +23,7 @@ function Main() {
 
   return (
     <>
-        <main>
+        <main className={style.main}>
           <div className={`row`}>
             <div className="container">
               <div className={`${style.heroImg} mx-auto d-flex align-items-center`}>

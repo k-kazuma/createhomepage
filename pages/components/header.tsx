@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import style from 'styles/components/header.module.scss'
+import {delay, motion} from 'framer-motion'
 
 function Header() {
 
@@ -35,7 +36,12 @@ function Header() {
 
   return (
     <>
-      <header className='bg-secondary mt-0 pt-2 pb1 position-relative'>
+      <motion.header 
+      className='bg-secondary mt-0 pt-2 pb1 position-relative'
+      style={{height:'100vh'}}
+      animate={{height:'100%'}}
+      transition={{duration:0.5, delay:0.2}}
+      >
         <div className='d-flex justify-content-between container mt-0'>
           <Link href={"/"} className="text-decoration-none">
             <div className='fs-2 text-light'>web制作Monkye</div>
@@ -62,7 +68,7 @@ function Header() {
             </div>
           </div>
         </div>
-      </header>
+      </motion.header>
       <div className={`${style.headerMenu} ${toggleButton && style.toggleButton}`}>
           <nav className='text-center'>
               <ul className='mt-5'>

@@ -123,7 +123,6 @@ export default function Form() {
   
     return (
       <>
-        <Header />
         <SubHeader
         text='問い合わせ'
         />

@@ -4,6 +4,7 @@ import Footer from './components/footer'
 import SubHeader from './components/subHeader'
 
 import style from 'styles/components/profile.module.scss'
+import Motion from './components/motion'
 
 function Profile() {
 
@@ -33,24 +34,26 @@ function Profile() {
   return (
     <>
         <Header />
-          <SubHeader 
-          text='プロフィール'
-          />
-          <div className='container'>
-            <table className={style.table}>
-              {ITEM.map(item => {
-                return(
-                  <thead key={item.td.length} className={style.thead}>
-                    <tr className={style.tr}>
-                      <th>{item.th}</th>
-                      <td>{item.td}</td>
-                    </tr>
-                  </thead>
-                )
-              })}
-              
-            </table>
-          </div>
+          <Motion>
+            <SubHeader 
+            text='プロフィール'
+            />
+            <div className='container'>
+              <table className={style.table}>
+                {ITEM.map(item => {
+                  return(
+                    <thead key={item.td.length} className={style.thead}>
+                      <tr className={style.tr}>
+                        <th>{item.th}</th>
+                        <td>{item.td}</td>
+                      </tr>
+                    </thead>
+                  )
+                })}
+                
+              </table>
+            </div>
+          </Motion>
         <Footer />
     </>
   )
