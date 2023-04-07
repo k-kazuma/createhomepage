@@ -1,12 +1,20 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 import Header from './components/header';
 import Main from './components/main';
-import Footer from './components/footer'
+import Footer from './components/footer';
 import Motion from './components/motion';
-
+import Load from './components/load';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+  const [load, setLoad] = useState(false);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoad(true)
+  //   }, 2000)
+  // },[])
 
   return (
     <>
@@ -16,11 +24,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header/>
-      <Motion>
-        <Main />
-      </Motion>
-      <Footer />
+      {!load && <Load />}
+      {load && (
+        <>
+          <Header />
+          <Motion>
+            <Main />
+          </Motion>
+          <Footer />
+        </>
+      )}
     </>
-  )
+  );
 }
