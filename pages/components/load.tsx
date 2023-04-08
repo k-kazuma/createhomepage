@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import style from 'styles/components/load.module.scss';
 
-function Load() {
+type Props = { load: Boolean };
+
+function Load({ load }: Props) {
   return (
-    <div className={style.loadBox}>
-      <div>road now</div>
-    </div>
+    <>
+      <div className={`${style.loadContainer} ${load && style.load}`}>
+        <div className={`${style.loadBox} bg-secondary`}></div>
+        <div className={`${style.text}`}>now loading...</div>
+      </div>
+    </>
   );
 }
 

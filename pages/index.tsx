@@ -7,14 +7,16 @@ import Motion from './components/motion';
 import Load from './components/load';
 import { useEffect, useState } from 'react';
 
+import style from 'styles/components/home.module.scss';
+
 export default function Home() {
   const [load, setLoad] = useState(false);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setLoad(true)
-  //   }, 2000)
-  // },[])
+  useEffect(() => {
+    setTimeout(() => {
+      setLoad(true);
+    }, 4000);
+  }, []);
 
   return (
     <>
@@ -24,15 +26,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {!load && <Load />}
+      <Load load={load} />
       {load && (
-        <>
+        <div className={style.load}>
           <Header />
           <Motion>
             <Main />
           </Motion>
           <Footer />
-        </>
+        </div>
       )}
     </>
   );
