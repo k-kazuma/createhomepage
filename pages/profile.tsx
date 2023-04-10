@@ -38,8 +38,10 @@ function Profile() {
     <>
       <Header />
       <Motion>
-        <SubHeader text="プロフィール" />
-        <div className="container">
+        <SubHeader text="Profile" />
+        <div className={` ${style.profile} container mt-5`}>
+          <h2 className={`mt-3`}>プロフィール</h2>
+          <hr className="mb-2" />
           <table className={style.table}>
             {ITEM.map((item) => {
               return (

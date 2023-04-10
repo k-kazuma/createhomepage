@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import type { Mesh } from 'three';
 
 import style from 'styles/components/subHeader.module.scss';
-import Box from './box';
 import { Canvas, useFrame } from '@react-three/fiber';
 
 type Props = { text: String };

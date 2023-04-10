@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useRef, useState, ReactNode } from 'react';
+import style from 'styles/components/form.module.scss';
 
 import SubHeader from './subHeader';
 
@@ -118,9 +119,15 @@ export default function Form() {
 
   return (
     <>
-      <SubHeader text="問い合わせ" />
-      <div className="container mt-5 position-relative">
+      <SubHeader text="Contact" />
+      <div className={`${style.from} container mt-5 position-relative`}>
         <h2 className={`mt-3`}>問い合わせフォーム</h2>
+        <hr className="mb-2" />
+        <p className="my-5">
+          コーディングのご依頼、ご相談は下記フォームからお願いいたします。
+          <br />
+          問い合わせ頂いた翌日中までに返信させていただきます。
+        </p>
         <form onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleSubmit(e)}>
           <div>
             <div className="mb-3 ">
