@@ -2,6 +2,7 @@
   height: 100vh;
   width: calc(100vw - 15px);
   display: flex;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease;
