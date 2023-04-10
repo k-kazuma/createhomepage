@@ -1,0 +1,16 @@
+.serviceText {
+  max-width: 850px;
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 2.3rem;
+  margin: 0 auto;
+  padding-top: 60px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease 0.5s;
+
+  &.inView {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

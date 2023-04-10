@@ -35,7 +35,7 @@ export default function Form() {
   };
 
   //入力内容を消す処理
-  const cleaValues = () => {
+  const clearValues = () => {
     setNameValue('');
     setMailValue('');
     setPhonValue('');
@@ -46,8 +46,8 @@ export default function Form() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const mailcheck = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
-    const phoncheck = /^0\d{9,10}$/;
+    const mailCheck = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+    const phonCheck = /^0\d{9,10}$/;
 
     setNameError('');
     setMailError('');
@@ -62,21 +62,21 @@ export default function Form() {
     if (!mailValue) {
       setMailError('メールアドレスを入力して下さい');
       setError(false);
-    } else if (!mailcheck.test(mailValue)) {
+    } else if (!mailCheck.test(mailValue)) {
       setMailError('正しくメールアドレスを入力して下さい');
       setError(false);
     }
     if (!phonValue) {
       setPhonError('電話番号を入力して下さい');
-    } else if (!phoncheck.test(phonValue)) {
+    } else if (!phonCheck.test(phonValue)) {
       setPhonError('電話番号を正しく入力して下さい');
     }
     if (!messageValue) {
       setMessageError('問い合わせ内容を入力して下さい');
     }
 
-    if (nameValue && mailcheck.test(mailValue) && phoncheck.test(phonValue) && messageValue) {
-      const resurt = confirm(`
+    if (nameValue && mailCheck.test(mailValue) && phonCheck.test(phonValue) && messageValue) {
+      const result = confirm(`
         下記の内容で送信しても宜しいでしょうか？\n
         【お名前】\n
         ${nameValue}\n
@@ -87,10 +87,10 @@ export default function Form() {
         【問い合わせ内容】\n
         ${messageValue}`);
 
-      if (resurt) {
+      if (result) {
         mailSend();
         alert('送信完了しました');
-        cleaValues();
+        clearValues();
       }
     }
   };
@@ -135,7 +135,7 @@ export default function Form() {
                 ref={nameRef}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleNameChange(e)}
               />
-              <span>{nameError}</span>
+              <span className="text-danger">{nameError}</span>
             </div>
             <div className="mb-3">
               <label htmlFor="mail" className="form-label">
@@ -149,7 +149,7 @@ export default function Form() {
                 ref={mailRef}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleMailChange(e)}
               />
-              <span>{mailError}</span>
+              <span className="text-danger">{mailError}</span>
             </div>
             <div className="mb-3">
               <label htmlFor="phon" className="form-label">
@@ -163,7 +163,7 @@ export default function Form() {
                 ref={phonRef}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handlePhonChange(e)}
               />
-              <span>{phonError}</span>
+              <span className="text-danger">{phonError}</span>
             </div>
             <div className="mb-3">
               <label htmlFor="message" className="form-label">
@@ -177,12 +177,12 @@ export default function Form() {
                 ref={messageRef}
                 onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleMessageChange(e)}
               ></textarea>
-              <span>{messageError}</span>
+              <span className="text-danger">{messageError}</span>
             </div>
             <button type="submit" className="btn btn-danger">
               送信する
             </button>
-            <button type="button" className="btn btn-danger ms-1" onClick={cleaValues}>
+            <button type="button" className="btn btn-danger ms-1" onClick={clearValues}>
               クリア
             </button>
           </div>
