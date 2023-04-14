@@ -1,0 +1,114 @@
+.production {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 0.5rem 0;
+
+  & > h4 {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 1s ease 0.5s;
+  }
+
+  & > div {
+    & > img {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 1s ease 1s;
+    }
+
+    & > p {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 1s ease 1.5s;
+    }
+  }
+  & .arrow {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 1s ease 2s;
+  }
+
+  &.inView {
+    & > h4 {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    & > div {
+      & > img {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      & > P {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    & .arrow {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.headline {
+  position: relative;
+}
+.headline::after {
+  content: '';
+  position: absolute;
+  display: block;
+  background: linear-gradient(285deg, rgba(55, 55, 63, 0.201) 0%, rgba(195, 193, 193, 1) 100%);
+  height: 40px;
+  width: 100%;
+  top: -40px;
+}
+
+.number {
+  padding: 5px 5px 0 5px;
+  font-size: 2rem;
+}
+.arrow {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 35px;
+    right: -18px;
+    height: 30px;
+    width: 80px;
+    background: linear-gradient(285deg, rgba(55, 55, 63, 0.757) 0%, rgba(195, 193, 193, 1) 100%);
+    transform: rotate(135deg) skew(-45deg);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    top: 35px;
+    left: -18px;
+    height: 30px;
+    width: 80px;
+    background: linear-gradient(285deg, rgba(55, 55, 63, 0.757) 0%, rgba(195, 193, 193, 1) 100%);
+    transform: rotate(-135deg) skew(45deg);
+  }
+}
+
+.productionImage {
+  width: 450px;
+}
+
+@media screen and (min-width: 768px) {
+  .production {
+    & > div {
+      & > p {
+        line-height: 2.6rem;
+      }
+    }
+  }
+}

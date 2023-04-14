@@ -8,6 +8,10 @@ function Header() {
 
   const navMenu = [
     {
+      href: '/production',
+      text: '制作の流れ',
+    },
+    {
       href: '/profile',
       text: 'プロフィール',
     },
@@ -20,6 +24,10 @@ function Header() {
     {
       href: '/',
       text: 'トップ',
+    },
+    {
+      href: '/production',
+      text: '制作の流れ',
     },
     {
       href: '/profile',
@@ -44,7 +52,7 @@ function Header() {
             <div className="fs-2 text-light">web制作Monkey</div>
           </Link>
           <div>
-            <nav className="mt-3 d-none d-sm-block">
+            <nav className="mt-3 d-none d-md-block">
               <ul className="d-flex mb-0">
                 {navMenu.map((item) => {
                   return (
@@ -60,7 +68,7 @@ function Header() {
                 })}
               </ul>
             </nav>
-            <div className="d-sm-none">
+            <div className="d-md-none">
               <button
                 className={`${style.menuButton} ${toggleButton && style.toggleButton}`}
                 onClick={() => {
