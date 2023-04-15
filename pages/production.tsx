@@ -3,7 +3,6 @@ import Header from './components/header';
 import Motion from './components/motion';
 import SubHeader from './components/subHeader';
 import Footer from './components/footer';
-import ServiceList from './components/serviceList';
 
 import style from 'styles/components/production.module.scss';
 import ProductionList from './components/productionList';
@@ -14,7 +13,7 @@ function Production() {
       num: '01',
       title: 'お問い合わせ・概算見積もり',
       text: '問い合わせフォームよりお問い合わせください。その後メールもしくは電話にて簡単な要望をお伺いして、概算見積もりをお伝えいたします。',
-      img: 'homepage.jpg',
+      img: 'estimate.jpg',
     },
     {
       num: '02',
@@ -26,13 +25,13 @@ function Production() {
       num: '03',
       title: 'テスト公開',
       text: 'パスワード付きでウェブ上に仮公開します。実際のサイトを見ていただき簡単な修正を行います。',
-      img: 'application.jpg',
+      img: 'test.jpg',
     },
     {
       num: '04',
       title: '納品',
       text: '修正が完了しましたら、サーバーへアップロードいたします。正常に動作していることを確認していただき納品完了になります。',
-      img: 'application.jpg',
+      img: 'release.jpg',
     },
   ];
   return (
