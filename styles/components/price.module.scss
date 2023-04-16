@@ -1,0 +1,89 @@
+.table {
+  border-collapse: collapse;
+  margin: 60px auto;
+  padding: 0;
+  width: 800px;
+  table-layout: fixed;
+}
+
+.table tr {
+  background-color: #e6ebf5;
+  padding: 0.35em;
+  border-bottom: 2px solid #fff;
+}
+.table th,
+.table td {
+  padding: 1em 10px 1em 1em;
+  border-right: 2px solid #fff;
+}
+.table th {
+  font-size: 0.85em;
+}
+.table thead tr {
+  background-color: #167f92;
+  color: #fff;
+}
+.table tbody th {
+  background: #78bbc7;
+  color: #fff;
+}
+.txt {
+  text-align: left;
+  font-size: 0.85em;
+}
+.price {
+  text-align: right;
+  color: #167f92;
+  font-weight: bold;
+}
+.non {
+  background: #fff;
+}
+@media screen and (max-width: 767px) {
+  .table {
+    border: 0;
+    width: 100%;
+  }
+  .table th {
+    background-color: #167f92;
+    display: block;
+    border-right: none;
+  }
+  .table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .table tr {
+    display: block;
+    margin-bottom: 0.625em;
+  }
+  .table td {
+    border-bottom: 1px solid #bbb;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+    position: relative;
+    padding: 0.625em 0.625em 0.625em 4em;
+    border-right: none;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+    color: #167f92;
+  }
+  .table td:last-child {
+    border-bottom: 0;
+  }
+  .table tbody th {
+    color: #fff;
+  }
+}

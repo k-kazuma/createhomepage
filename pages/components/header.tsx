@@ -9,7 +9,7 @@ function Header() {
   const navMenu = [
     {
       href: '/production',
-      text: '制作の流れ',
+      text: '制作の流れ・料金',
     },
     {
       href: '/profile',
@@ -27,7 +27,7 @@ function Header() {
     },
     {
       href: '/production',
-      text: '制作の流れ',
+      text: '制作の流れ・料金',
     },
     {
       href: '/profile',
