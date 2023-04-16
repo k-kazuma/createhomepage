@@ -6,7 +6,7 @@ export default function sendGmail(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json(req.body);
 
   const transporter = nodemailer.createTransport({
-    host: 'email-smtp.<northeast-1:605153273255:identity/webseisakumonkey@gmail.com>.amazonaws.com',
+    host: 'smtp.gmail.com',
     port: 587,
     auth: {
       user: process.env.GMAIL_USER,
