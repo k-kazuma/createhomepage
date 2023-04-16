@@ -6,13 +6,14 @@ import Footer from './components/footer';
 
 import style from 'styles/components/production.module.scss';
 import ProductionList from './components/productionList';
+import Price from './components/price';
 
 function Production() {
   const ITEM = [
     {
       num: '01',
       title: 'お問い合わせ・概算見積もり',
-      text: '問い合わせフォームよりお問い合わせください。その後メールもしくは電話にて簡単な要望をお伺いして、概算見積もりをお伝えいたします。',
+      text: 'お問い合わせ頂いた後メールもしくは電話にて簡単な要望をお伺いして、概算見積もりをお伝えいたします。',
       img: 'estimate.jpg',
     },
     {
@@ -54,6 +55,16 @@ function Production() {
                 />
               );
             })}
+          </div>
+          <h2 className={`mt-3`}>料金</h2>
+          <hr className="mb-2" />
+          <div>
+            <div className={style.priceText}>
+              <p>
+                ご依頼の内容によって料金は異なりますのでお問い合わせ後に見積もりを提示させていただきますのでまずはご相談をお願いいたします。
+              </p>
+            </div>
+            <Price />
           </div>
         </div>
       </Motion>
