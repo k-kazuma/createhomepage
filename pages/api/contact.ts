@@ -6,7 +6,7 @@ export default function sendGmail(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json(req.body);
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: process.env.GMAIL_HOST,
     port: 587,
     auth: {
       user: process.env.GMAIL_USER,
@@ -17,7 +17,7 @@ export default function sendGmail(req: NextApiRequest, res: NextApiResponse) {
   // 管理人が受け取るメール
   const toHostMailDate = {
     from: req.body.mail,
-    to: process.env.GMAIL_USER,
+    to: process.env.GMAIL_ADDRESS,
     subject: `【お問い合わせです】${req.body.name}様より`,
     text: `${req.body.message} Send from ${req.body.mail}`,
     html: `
@@ -34,7 +34,7 @@ export default function sendGmail(req: NextApiRequest, res: NextApiResponse) {
 
   //ユーザーが受け取るメール
   const toUserMailDate = {
-    from: process.env.GMAIL_USER,
+    from: process.env.GMAIL_ADDRESS,
     to: req.body.mail,
     subject: `【${req.body.name}様お問い合わせありがとう御座います】`,
     text: `${req.body.message} Send from ${req.body.mail}`,
