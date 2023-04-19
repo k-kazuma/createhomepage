@@ -105,7 +105,7 @@ export default function Form() {
       message: messageRef.current?.value,
     };
 
-    await fetch('https://ygk7dyat8l.execute-api.ap-northeast-1.amazonaws.com/default/sendForm', {
+    await fetch('https://maosvmkq4gonj5ztn6oku23lhm0kjvat.lambda-url.ap-northeast-1.on.aws/', {
       method: 'POST',
       headers: {
         Accept: 'application/json, text/plain',
