@@ -107,6 +107,7 @@ export default function Form() {
 
     await fetch('https://ygk7dyat8l.execute-api.ap-northeast-1.amazonaws.com/default/sendForm', {
       method: 'POST',
+      mode: 'cors',
       headers: {
         Accept: 'application/json, text/plain',
         'Content-Type': 'application/json',
