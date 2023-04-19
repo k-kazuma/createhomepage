@@ -17,7 +17,7 @@ function SubHeader(props: Props) {
     });
     return (
       <mesh ref={cubeRef2} position={[position[0], position[1], position[2]]}>
-        <boxBufferGeometry args={[2.5, 2.5, 2.5]} />
+        <boxGeometry args={[2.5, 2.5, 2.5]} />
         <meshStandardMaterial color="white" />
       </mesh>
     );

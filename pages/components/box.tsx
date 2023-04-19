@@ -16,7 +16,7 @@ function Cube({ position = [0, 0, 0] }: { position?: number[] }) {
 
   return (
     <mesh ref={cubeRef} position={[position[0], translate, position[2]]}>
-      <boxBufferGeometry args={[0.7, 0.7, 0.7]} />
+      <boxGeometry args={[0.7, 0.7, 0.7]} />
       <meshStandardMaterial color="white" />
     </mesh>
   );
@@ -33,7 +33,7 @@ function Cube2({ position = [0, 0, 0] }: { position?: number[] }) {
 
   return (
     <mesh ref={cubeRef2} position={[position[0], position[1], position[2]]}>
-      <boxBufferGeometry args={[1.9, 1.9, 1.9]} />
+      <boxGeometry args={[1.9, 1.9, 1.9]} />
       <meshStandardMaterial color="white" />
     </mesh>
   );
