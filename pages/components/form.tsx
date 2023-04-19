@@ -98,11 +98,16 @@ export default function Form() {
 
   //メール送信の実行をAPIへ送信する処理
   const mailSend = async () => {
+    const nameValue = nameRef.current?.value;
+    const mailValue = mailRef.current?.value;
+    const phonValue = phonRef.current?.value;
+    const messageValue = messageRef.current?.value;
+
     let data = {
-      name: nameRef.current?.value,
-      mail: mailRef.current?.value,
-      phon: phonRef.current?.value,
-      message: messageRef.current?.value,
+      name: nameValue,
+      mail: mailValue,
+      phon: phonValue,
+      message: messageValue,
     };
 
     await fetch('https://maosvmkq4gonj5ztn6oku23lhm0kjvat.lambda-url.ap-northeast-1.on.aws/', {
